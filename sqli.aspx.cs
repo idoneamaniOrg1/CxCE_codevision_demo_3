@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Security.AntiXss.Sanitize;
 
+
 namespace CxCE_Demo
 {
     public partial class sqli : System.Web.UI.Page
@@ -39,7 +40,7 @@ namespace CxCE_Demo
                 age = getAge(username);
             }
 
-            string san_username = AntiXss.Sanitize(username);
+            string san_username = AntiXss.HtmlEncode(username);
             message.Text = "Welcome " + san_username;
             conn.Close();
         }
