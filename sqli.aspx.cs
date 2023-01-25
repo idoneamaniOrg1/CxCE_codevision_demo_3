@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Security.AntiXss.Sanitize;
 
 namespace CxCE_Demo
 {
@@ -38,7 +39,8 @@ namespace CxCE_Demo
                 age = getAge(username);
             }
 
-            message.Text = "Welcome " + username;
+            string san_username = AntiXss.Sanitize(username);
+            message.Text = "Welcome " + san_username;
             conn.Close();
         }
 
