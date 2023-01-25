@@ -16,6 +16,6 @@ class PasswordExample
 
     class Constants
     {
-        public static string DB_PASSWORD = PasswordExample.GetPassword();
+        public static string DB_PASSWORD = "Checkmarx123!";
     }
 }
